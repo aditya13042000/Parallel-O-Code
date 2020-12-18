@@ -10,17 +10,18 @@ function Cards() {
 				<div className="cards__wrapper">
 					<ul className="cards__items">
 						<CardItem
-							src="images/code1.jpg"
-							text="Sorting Algorithms"
-							path="/algopage/sorting"
-							
-						/>
-						<CardItem
 							src="images/code2.jpg"
 							text="Searching Algorithms"
 							path="/algopage/searching"
 							
 						/>
+						<CardItem
+							src="images/code1.jpg"
+							text="Sorting Algorithms"
+							path="/algopage/sorting"
+							
+						/>
+						
 					</ul>
 					<ul className="cards__items">
 						<CardItem

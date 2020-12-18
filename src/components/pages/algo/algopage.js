@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../App.css';
-import Cards from '../algopage-cards';
+import '../../../App.css';
+import Cards from '../../algopage-cards';
 
 function AlgoPage() {
   return (
