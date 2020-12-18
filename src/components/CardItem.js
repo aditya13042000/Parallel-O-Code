@@ -8,9 +8,9 @@ function CardItem(props) {
 			<Fade left>
 				<li className={`cards__item ${props.className}`}>
 					<Link className="cards__item__link" to={props.path}>
-						<figure className="cards__item__pic-wrap" data-category={props.label}>
+						<figure className="cards__item__pic-wrap" style={{background:'transparent'}} data-category={props.label}>
 							<img className="cards__item__img" alt={props.label} src={props.src} />
-							<button style={{position:'absolute',padding:5,top:0,right:5,boxSizing:'border-box',background:'blue',outline:'none',border:'none',color:'#fff'}}>{props.rank}</button>
+							<button style={{position:'absolute',padding:5,top:0,right:5,boxSizing:'border-box',background:'transparent',outline:'none',border:'none',color:'#fff'}}></button>
 						</figure>
 						<div className="cards__item__info">
 							<h5 className="cards__item__text">{props.text}</h5>

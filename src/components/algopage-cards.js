@@ -11,18 +11,31 @@ function Cards() {
 					<ul className="cards__items">
 						<CardItem
 							src="images/code1.jpg"
-							text="Algorithms Section"
-							path="/algopage"
+							text="Sorting Algorithms"
+							path="/algopage/sorting"
 							
 						/>
 						<CardItem
 							src="images/code2.jpg"
-							text="Image Processing Section"
-							path="/ippage"
+							text="Searching Algorithms"
+							path="/algopage/searching"
 							
 						/>
 					</ul>
-					
+					<ul className="cards__items">
+						<CardItem
+							src="images/code1.jpg"
+							text="Dynamic Programming"
+							path="/algopage/dp"
+							
+						/>
+						<CardItem
+							src="images/code2.jpg"
+							text="Graph Algorithms"
+							path="/algopage/graph"
+							
+						/>
+					</ul>
 				</div>
 			</div>
 		</div>

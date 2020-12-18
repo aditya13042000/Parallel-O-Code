@@ -6,10 +6,9 @@ import "./HeroSection.css";
 function HeroSection() {
 	return (
 		<div className="hero-container">
-			<video src="/videos/video-3.webm" autoPlay loop muted />
-			<h1>TECHUMEN 2020</h1>
-			<p>Where We Compete and Grow </p>
-			<p style={{fontSize:'1.5rem'}} >Scroll Down to Checkout the Results!!</p>
+			<video src="/videos/video-2.mp4" autoPlay loop muted />
+			<h1>PARALLEL-O-CODE</h1>
+			<p>Shreyash Mandade<br></br>Aditya Gadadhani<br></br>Abhishek More </p>
 			<div className="hero-btns">
 				<Button className="btns" buttonStyle="btn--outline" buttonSize="btn--large" ok="same">
 					GET STARTED
@@ -18,7 +17,6 @@ function HeroSection() {
 					className="btns"
 					buttonStyle="btn--primary"
 					buttonSize="btn--large"
-					onClick={console.log("youtube")}
 					ok="youtube">
 					<a
 						style={{ color: "inherit", textDecoration: "none" }}

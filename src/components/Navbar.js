@@ -29,7 +29,7 @@ function Navbar() {
 			<nav className="_navbar">
 				<div className="_navbar-container">
 					<Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-						TECHUMEN
+						PARALLEL-O-CODE
 					</Link>
 					<div className="menu-icon" onClick={handleClick}>
 						<i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -40,19 +40,14 @@ function Navbar() {
 								Home
 							</Link>
 						</li>
-						{/*<li className="_nav-item">
-							<Link to="/events" className="nav-links" onClick={closeMobileMenu}>
-								Events
-							</Link>
-	</li>*/}
 						<li className="_nav-item">
-							<a href="/#events" className="nav-links" onClick={closeMobileMenu}>
-								Events
+							<a href="/algopage" className="nav-links" onClick={closeMobileMenu}>
+								Algorithms
 							</a>
 						</li>
 						<li className="_nav-item">
-							<Link to="/sponsor" className="nav-links" onClick={closeMobileMenu}>
-								Sponsors
+							<Link to="/ippage" className="nav-links" onClick={closeMobileMenu}>
+								Image Processing
 							</Link>
 						</li>
 					</ul>
