@@ -7,6 +7,19 @@
     color:white;
 }
 
+.algo-content{
+  height:70%;
+  width:70%;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  overflow-y:scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  background:rgba(255,255,255,0.5);
+}
+
 
 
 
