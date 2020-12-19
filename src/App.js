@@ -13,6 +13,11 @@ import Sorting from './components/pages/algo/sorting'
 import Dp from './components/pages/algo/dp'
 import Graph from './components/pages/algo/graph'
 
+import Negation from './components/pages/ip/negation'
+import Blurring from './components/pages/ip/blurring'
+import Edgedetection from './components/pages/ip/edge-detection'
+import LoG from './components/pages/ip/LoG'
+
 function App() {
 	return (
 		<>
@@ -26,6 +31,10 @@ function App() {
 					<Route exact path="/algopage/searching" component={Searching}></Route>
 					<Route exact path="/algopage/dp" component={Dp}></Route>
 					<Route exact path="/algopage/graph" component={Graph}></Route>
+					<Route path="/ippage/negation" exact component={Negation} />
+					<Route path="/ippage/blurring" exact component={Blurring} />
+					<Route path="/ippage/edgedetection" exact component={Edgedetection} />
+					<Route path="/ippage/LoG" exact component={LoG} />
 				</Switch>
 				<Footer/>
 			</Router>
