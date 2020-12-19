@@ -44,6 +44,13 @@ video {
   margin-left: 4px;
 }
 
+.guide{
+  position: absolute;
+  padding-left:20px;
+  bottom:0;
+  left:0;
+}
+
 @media screen and (max-width: 960px) {
   .hero-container > h1 {
     font-size: 70px;
