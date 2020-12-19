@@ -11,14 +11,14 @@ function Cards() {
 					<ul className="cards__items">
 						<CardItem
 							src="images/code2.jpg"
-							text="Image Blurring"
-							path="/ippage/blurring"
+							text="Image Negation"
+							path="/ippage/negation"
 							
 						/>
 						<CardItem
 							src="images/code1.jpg"
-							text="Negation"
-							path="/ippage/negation"
+							text="Blurring"
+							path="/ippage/blurring"
 							
 						/>
 						
