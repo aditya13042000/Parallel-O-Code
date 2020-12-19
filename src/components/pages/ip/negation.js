@@ -586,18 +586,18 @@ int main()
         <section>  
         <h1>Images Output</h1>
         <div className="gif-here">
-            <img src="/gif/negation/astronaut.gif"></img>
-            <img src="/gif/negation/bigben.gif"></img>
-            <img src="/gif/negation/coala.gif"></img>
-            <img src="/gif/negation/ironman.gif"></img>
-            <img src="/gif/negation/superman.gif"></img>
+            <img alt="nagation-section" src="/gif/negation/astronaut.gif"></img>
+            <img alt="nagation-section" src="/gif/negation/bigben.gif"></img>
+            <img alt="nagation-section" src="/gif/negation/coala.gif"></img>
+            <img alt="nagation-section" src="/gif/negation/ironman.gif"></img>
+            <img alt="nagation-section" src="/gif/negation/superman.gif"></img>
         </div>
         </section>  
 
         <section>  
         <h1>Results</h1>
         <div className="source-result">
-            <img src="/gif/negation/graph.PNG"></img>
+            <img alt="nagation-section" src="/gif/negation/graph.PNG"></img>
         </div>
         </section>  
     </div>

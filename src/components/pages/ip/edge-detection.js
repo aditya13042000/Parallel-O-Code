@@ -862,18 +862,18 @@ export default function Negation() {
         <section>  
         <h1>Images Output</h1>
         <div className="gif-here">
-            <img src="/gif/blurr/micky.gif"></img>
-            <img src="/gif/blurr/bigben.gif"></img>
-            <img src="/gif/blurr/house.gif"></img>
-            <img src="/gif/blurr/spidey.gif"></img>
-            <img src="/gif/blurr/angry.gif"></img>
+            <img alt="edge-detection" src="/gif/blurr/micky.gif"></img>
+            <img alt="edge-detection" src="/gif/blurr/bigben.gif"></img>
+            <img alt="edge-detection" src="/gif/blurr/house.gif"></img>
+            <img alt="edge-detection" src="/gif/blurr/spidey.gif"></img>
+            <img alt="edge-detection" src="/gif/blurr/angry.gif"></img>
         </div>
         </section>  
 
         <section>  
         <h1>Results</h1>
         <div className="source-result">
-            <img src="/gif/blurr/graph.PNG"></img>
+            <img alt="edge-detection" src="/gif/blurr/graph.PNG"></img>
         </div>
         </section>  
     </div>
