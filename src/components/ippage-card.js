@@ -5,18 +5,18 @@ import CardItem from "./CardItem";
 function Cards() {
 	return (
 		<div className="cards" id="events">
-			<h1 className="text-success">Choose Section</h1>
+			<h1 className="text-success">Choose Image Processing Technique Section</h1>
 			<div className="cards__container">
 				<div className="cards__wrapper">
 					<ul className="cards__items">
 						<CardItem
-							src="images/code2.jpg"
+							src="gif/negation/superman.gif"
 							text="Image Negation"
 							path="/ippage/negation"
 							
 						/>
 						<CardItem
-							src="images/code1.jpg"
+							src="gif/blurr/spidey.gif"
 							text="Blurring"
 							path="/ippage/blurring"
 							
@@ -25,13 +25,13 @@ function Cards() {
 					</ul>
 					<ul className="cards__items">
 						<CardItem
-							src="images/code1.jpg"
+							src="gif/edge/peak.gif"
 							text="Edge Detection"
 							path="/ippage/edgedetection"
 							
 						/>
 						<CardItem
-							src="images/code2.jpg"
+							src="gif/LoG/thanos.gif"
 							text="LoG"
 							path="/ippage/LoG"
 							

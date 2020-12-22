@@ -5,7 +5,7 @@ import CardItem from "./CardItem";
 function Cards() {
 	return (
 		<div className="cards" id="events">
-			<h1 className="text-success">Choose Section</h1>
+			<h1 className="text-success">Choose Algorithm Type</h1>
 			<div className="cards__container">
 				<div className="cards__wrapper">
 					<ul className="cards__items">
