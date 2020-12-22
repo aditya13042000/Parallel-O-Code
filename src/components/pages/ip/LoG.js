@@ -862,18 +862,18 @@ export default function Negation() {
         <section>  
         <h1>Images Output</h1>
         <div className="gif-here">
-            <img alt="LoG" src="/gif/blurr/micky.gif"></img>
-            <img alt="LoG" src="/gif/blurr/bigben.gif"></img>
-            <img alt="LoG" src="/gif/blurr/house.gif"></img>
-            <img alt="LoG" src="/gif/blurr/spidey.gif"></img>
-            <img alt="LoG" src="/gif/blurr/angry.gif"></img>
+            <img alt="LoG" src="/gif/LoG/thanos.gif"></img>
+            <img alt="LoG" src="/gif/LoG/7won.gif"></img>
+            <img alt="LoG" src="/gif/LoG/house.gif"></img>
+            <img alt="LoG" src="/gif/LoG/cap.gif"></img>
+            <img alt="LoG" src="/gif/LoG/mer.gif"></img>
         </div>
         </section>  
 
         <section>  
         <h1>Results</h1>
         <div className="source-result">
-            <img alt="LoG" src="/gif/blurr/graph.PNG"></img>
+            <img alt="LoG" src="/gif/LoG/graph.PNG"></img>
         </div>
         </section>  
     </div>

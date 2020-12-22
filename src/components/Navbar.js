@@ -41,9 +41,9 @@ function Navbar() {
 							</Link>
 						</li>
 						<li className="_nav-item">
-							<a href="/algopage" className="nav-links" onClick={closeMobileMenu}>
+							<Link to="/algopage" className="nav-links" onClick={closeMobileMenu}>
 								Algorithms
-							</a>
+							</Link>
 						</li>
 						<li className="_nav-item">
 							<Link to="/ippage" className="nav-links" onClick={closeMobileMenu}>
