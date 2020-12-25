@@ -12,6 +12,11 @@ import Searching from './components/pages/algo/searching'
 import Sorting from './components/pages/algo/sorting'
 import Dp from './components/pages/algo/dp'
 import Graph from './components/pages/algo/graph'
+import Cf1 from './components/pages/algo/cf1'
+import Cf2 from './components/pages/algo/cf2'
+import Cf3 from './components/pages/algo/cf3'
+import Cf4 from './components/pages/algo/cf4'
+import Cf5 from './components/pages/algo/cf5'
 
 import Negation from './components/pages/ip/negation'
 import Blurring from './components/pages/ip/blurring'
@@ -31,6 +36,13 @@ function App() {
 					<Route exact path="/algopage/searching" component={Searching}></Route>
 					<Route exact path="/algopage/dp" component={Dp}></Route>
 					<Route exact path="/algopage/graph" component={Graph}></Route>
+					<Route exact path="/algopage/cf1" component={Cf1}></Route>
+					<Route exact path="/algopage/cf2" component={Cf2}></Route>
+					<Route exact path="/algopage/cf3" component={Cf3}></Route>
+					<Route exact path="/algopage/cf4" component={Cf4}></Route>
+					<Route exact path="/algopage/cf5" component={Cf5}></Route>
+
+
 					<Route path="/ippage/negation" exact component={Negation} />
 					<Route path="/ippage/blurring" exact component={Blurring} />
 					<Route path="/ippage/edgedetection" exact component={Edgedetection} />
