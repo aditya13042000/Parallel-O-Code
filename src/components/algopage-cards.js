@@ -11,13 +11,13 @@ function Cards() {
 					<ul className="cards__items">
 						<CardItem
 							src="images/code2.jpg"
-							text="Searching Algorithms"
+							text="Codeforces Question"
 							path="/algopage/searching"
 							
 						/>
 						<CardItem
 							src="images/code1.jpg"
-							text="Sorting Algorithms"
+							text="Codeforces Question"
 							path="/algopage/sorting"
 							
 						/>
