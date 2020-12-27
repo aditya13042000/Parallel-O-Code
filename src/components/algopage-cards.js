@@ -33,12 +33,12 @@ export const AlgoMenu= () =>{
 				For Windows Users:
 				The following codes will be implemented in Dev Cpp.So make sure to install Dev Cpp.Link:
 				`}
-				<a href="https://sourceforge.net/projects/orwelldevcpp/" target="_blank"> click here to download DevCpp </a>
+				<a href="https://sourceforge.net/projects/orwelldevcpp/" target="_blank"  rel="noopener noreferrer"> click here to download DevCpp </a>
 				{`
 				1)After installation,to make Dev Cpp compatible for supporting openMP follow the steps given in below youtube link:
 				`}
 
-				<a href="https://youtu.be/nk90tEbdl3Q" target="_blank"> Next Steps Here </a>
+				<a href="https://youtu.be/nk90tEbdl3Q" target="_blank"  rel="noopener noreferrer"> Next Steps Here </a>
 					
 
 				{`
