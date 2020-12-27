@@ -8,10 +8,13 @@ import Home from "./components/pages/Home";
 import IpPage from './components/pages/ip/ippage'
 import {AlgoMenuPage,AlgoCardsPage,CpCardsPage} from './components/pages/algo/algopage'
 import Footer from './components/Footer'
-import Searching from './components/pages/algo/searching'
-import Sorting from './components/pages/algo/sorting'
-import Dp from './components/pages/algo/dp'
-import Graph from './components/pages/algo/graph'
+
+import Bubble from './components/pages/algo/bubble'
+import Prime from './components/pages/algo/prime'
+import Matrix from './components/pages/algo/matrix'
+import Pascal from './components/pages/algo/pascal'
+import Kruskal from './components/pages/algo/kruskal'
+
 import Cf1 from './components/pages/algo/cf1'
 import Cf2 from './components/pages/algo/cf2'
 import Cf3 from './components/pages/algo/cf3'
@@ -33,12 +36,14 @@ function App() {
 					<Route path="/algopage" exact component={AlgoMenuPage} />
 					<Route path="/standard" exact component={AlgoCardsPage} />
 					<Route path="/cpcards" exact component={CpCardsPage} />
-
 					<Route path="/ippage" exact component={IpPage} />
-					<Route exact path="/algopage/sorting" component={Sorting}></Route>
-					<Route exact path="/algopage/searching" component={Searching}></Route>
-					<Route exact path="/algopage/dp" component={Dp}></Route>
-					<Route exact path="/algopage/graph" component={Graph}></Route>
+
+					<Route exact path="/algopage/bubble" component={Bubble}></Route>
+					<Route exact path="/algopage/prime" component={Prime}></Route>
+					<Route exact path="/algopage/matrix" component={Matrix}></Route>
+					<Route exact path="/algopage/kruskal" component={Kruskal}></Route>
+					<Route exact path="/algopage/pascal" component={Pascal}></Route>
+
 					<Route exact path="/algopage/cf1" component={Cf1}></Route>
 					<Route exact path="/algopage/cf2" component={Cf2}></Route>
 					<Route exact path="/algopage/cf3" component={Cf3}></Route>
