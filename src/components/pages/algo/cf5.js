@@ -351,7 +351,13 @@ export default function Blurring() {
         </pre>
         </section>  
 
-       
+        <section>  
+        <h1>Results</h1>
+        <div className="source-result">
+        <img alt="nagation-section" src="/gif/algos/que5.PNG"></img>
+        </div>
+        </section>
+
     </div>
     
             	
