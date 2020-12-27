@@ -394,7 +394,7 @@ int main()
         </section>  
 
         <section>  
-        <h1>Nagation Image Parallel</h1>
+        <h1>Negation Image Parallel</h1>
         <pre className="source-code">
             {`
               
