@@ -1,13 +1,28 @@
 import React from 'react';
 import '../../../App.css';
-import Cards from '../../algopage-cards';
+import {AlgoMenu, CpCards,AlgoCards} from '../../algopage-cards';
 
-function AlgoPage() {
+export const AlgoMenuPage=()=> {
   return (
     <>
-      <Cards />
+      <AlgoMenu />
     </>
   );
 }
 
-export default AlgoPage;
+export const AlgoCardsPage=()=> {
+  return (
+    <>
+      <AlgoCards />
+    </>
+  );
+}
+
+export const CpCardsPage=()=> {
+  return (
+    <>
+      <CpCards />
+    </>
+  );
+}
+
