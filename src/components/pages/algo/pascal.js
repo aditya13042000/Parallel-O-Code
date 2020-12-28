@@ -19,88 +19,39 @@ export default function Blurring() {
         <pre className="source-code">
             {`
               
-              #include <bits/stdc++.h>
-        #include <omp.h>
-        #include <sys/time.h>
-        using namespace std;
-        const int maxs = 503;
-        int n;
-
-        int a[maxs];
-        vector<vector<vector<int>>>dp;
-
-        int go(int pos,int prev,int x)
-        {
-            if(pos > n)
-                return 0;
-            
-            if(dp[pos][prev][x] != -1)
-                return dp[pos][prev][x];
-            
-            int res = maxs;
-            
-            if(a[pos] > x && x >= prev)
-            res = min(res,1 + go(pos + 1,x,a[pos]));
-            
-            if(a[pos] >= prev)
-                res = min(res,go(pos + 1,a[pos],x));
-            
-            return dp[pos][prev][x] = res;
-        }
-
-        int main()
-        {
-            ios_base::sync_with_stdio(false);
-            cin.tie(NULL);
-            cout.tie(NULL);
-            
-            int tt = 1;
-            cin >> tt;
-            
-            while(tt--)
-            {
-
-                struct timeval tv1, tv2;
-                struct timezone tz;
-                double elapsed; 
-                gettimeofday(&tv1, &tz);
-
-
-                int x;
-                cin >> n >> x;
-                
-                
-                int maxx = -1;
-                
-                for(int i = 1;i <= n;++i)
-                {
-                    cin >> a[i];
-                    maxx = max(maxx,a[i]);
-                
-                }
-            
-                maxx = max(maxx,x);
-                dp.clear();
-                
-                dp.resize(n + 5,vector<vector<int>>(maxx + 2,vector<int>(maxx + 2,-1)));
-                
-                int res = go(1,0,x);
-                
-                if(res == maxs)
-                    res = -1;
-                
-                cout << res;
-                
-                
-                cout << '\n';
-
-                gettimeofday(&tv2, &tz);
-
-                
-                elapsed = (double) (tv2.tv_sec-tv1.tv_sec) + (double) (tv2.tv_usec-tv1.tv_usec) * 1.e-6;
-                printf("elapsed time = %f seconds.\n", elapsed);
-            }
-        }
+              #include <omp.h>
+              #include <stdio.h>
+              #include <stdlib.h>
+              //#define MAX_THREADS 8
+              
+              static long steps = 1000000000;
+              double step;
+              
+              int main () {
+              
+                  int i,j;
+                  double x;
+                  double pi, sum = 0.0;
+                  //double start, delta;
+              
+                  double start = omp_get_wtime();
+                  step = 1.0/(double) steps;
+              
+              
+                      for (i=0; i < steps; i++)
+                      {
+                          x = (i+0.5)*step;
+                          sum += 4.0 / (1.0+x*x);
+                      }
+              
+                      // Out of the parallel region, finialize computation
+                      pi = step * sum;
+                      double delta = omp_get_wtime() - start;
+                      printf("PI = %.16g computed in %.4g seconds", pi, delta);
+              
+                      return 0;
+              
+                  }              
              
               
             `}
@@ -112,96 +63,51 @@ export default function Blurring() {
         <pre className="source-code">
             {`
               
-              #include <bits/stdc++.h>
-        #include <omp.h>
-        #include <sys/time.h>
-        using namespace std;
-        const int maxs = 503;
-        int n;
-
-        int a[maxs];
-        vector<vector<vector<int>>>dp;
-
-        int go(int pos,int prev,int x)
-        {
-            #pragma omp if
-            if(pos > n)
-                return 0;
-            
-            #pragma omp if
-            if(dp[pos][prev][x] != -1)
-                return dp[pos][prev][x];
-            
-            int res = maxs;
-            
-            #pragma omp if
-            if(a[pos] > x && x >= prev)
-            res = min(res,1 + go(pos + 1,x,a[pos]));
-            
-            #pragma omp if
-            if(a[pos] >= prev)
-                res = min(res,go(pos + 1,a[pos],x));
-            
-            return dp[pos][prev][x] = res;
-        }
-
-        int main()
-        {
-            ios_base::sync_with_stdio(false);
-            cin.tie(NULL);
-            cout.tie(NULL);
-            
-            int tt = 1;
-            cin >> tt;
-            
-            while(tt--)
-            {
-
-                int x,i;
-                cin >> n >> x;
-                
-                
-                int maxx = -1;
-
-                
-
-                #pragma omp parallel{
-
-                struct timeval tv1, tv2;
-                struct timezone tz;
-                double elapsed; 
-                gettimeofday(&tv1, &tz);
-
-                #pragma omp for private(i)
-                for(i = 1;i <= n;++i)
-                {
-                    cin >> a[i];
-                    maxx = max(maxx,a[i]);
-                
-                }
-            
-                maxx = max(maxx,x);
-                dp.clear();
-                
-                dp.resize(n + 5,vector<vector<int>>(maxx + 2,vector<int>(maxx + 2,-1)));
-                
-                int res = go(1,0,x);
-                
-                if(res == maxs)
-                    res = -1;
-                
-                cout << res;
-                
-                
-                cout << '\n';
-
-                gettimeofday(&tv2, &tz);
-
-                
-                elapsed = (double) (tv2.tv_sec-tv1.tv_sec) + (double) (tv2.tv_usec-tv1.tv_usec) * 1.e-6;
-                printf("elapsed time = %f seconds.\n", elapsed);
-            }
-            }
+              #include <omp.h>
+              #include <stdio.h>
+              #include <stdlib.h>
+              #define MAX_THREADS 8
+              
+              static long steps = 1000000000;
+              double step;
+              
+              int main (int argc, const char *argv[]) {
+              
+                  int i,j;
+                  double x;
+                  double pi, sum = 0.0;
+                  double start, delta;
+              
+                  step = 1.0/(double) steps;
+              
+                  // Compute parallel compute times for 1-MAX_THREADS
+                  for (j=1; j<= MAX_THREADS; j++) {
+              
+                      printf(" running on %d threads: ", j);
+              
+                      // This is the beginning of a single PI computation
+                      omp_set_num_threads(j);
+              
+                      sum = 0.0;
+                      double start = omp_get_wtime();
+              
+              
+                      #pragma omp parallel for reduction(+:sum) private(x)
+                      for (i=0; i < steps; i++) {
+                          x = (i+0.5)*step;
+                          sum += 4.0 / (1.0+x*x);
+                      }
+              
+                      // Out of the parallel region, finialize computation
+                      pi = step * sum;
+                      delta = omp_get_wtime() - start;
+                      printf("PI = %.16g computed in %.4g seconds", pi, delta);
+              
+                  }
+                  return 0;
+              
+              }
+              
               
             `}
         </pre>
@@ -210,7 +116,7 @@ export default function Blurring() {
         <section>  
         <h1>Results</h1>
         <div className="source-result">
-        <img alt="nagation-section" src="/gif/algos/pascal.PNG"></img>
+        <img alt="nagation-section" src="/gif/algos/pi.PNG"></img>
         </div>
         </section>
     </div>

@@ -109,7 +109,7 @@ export const AlgoMenu= () =>{
 					<ul className="cards__items">
 						<CardItem
 							src="images/code1.jpg"
-							text="Pascal Triangle"
+							text="PI Value Calculation"
 							path="/algopage/pascal"
 							
 						/>
