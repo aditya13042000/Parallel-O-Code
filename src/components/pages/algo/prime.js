@@ -18,89 +18,50 @@ export default function Blurring() {
         <pre className="source-code">
             {`
               
-              #include <bits/stdc++.h>
-        #include <omp.h>
-        #include <sys/time.h>
-        using namespace std;
-        const int maxs = 503;
-        int n;
+        
+    #include <bits/stdc++.h>
+    #include<omp.h>
+    using namespace std;
 
-        int a[maxs];
-        vector<vector<vector<int>>>dp;
 
-        int go(int pos,int prev,int x)
+    int main()
+    {
+
+        int n,i,j;
+        int prime[1000];
+
+        cout<<"In order to find prime number from 1 - n enter value of n\n";
+        cin>>n;
+
+        for(i=1;i<=n;i++)
+            prime[i]=1;
+        prime[1]=0;
+
+        double start,end;
+        //start=omp_get_wtime();
+
+        for(i=2;i*i<=n;i++)
         {
-            if(pos > n)
-                return 0;
-            
-            if(dp[pos][prev][x] != -1)
-                return dp[pos][prev][x];
-            
-            int res = maxs;
-            
-            if(a[pos] > x && x >= prev)
-            res = min(res,1 + go(pos + 1,x,a[pos]));
-            
-            if(a[pos] >= prev)
-                res = min(res,go(pos + 1,a[pos],x));
-            
-            return dp[pos][prev][x] = res;
-        }
 
-        int main()
-        {
-            ios_base::sync_with_stdio(false);
-            cin.tie(NULL);
-            cout.tie(NULL);
-            
-            int tt = 1;
-            cin >> tt;
-            
-            while(tt--)
+            //#pragma omp parallel for
+            for(j=i*i;j<=n;j+=i)
             {
-
-                struct timeval tv1, tv2;
-                struct timezone tz;
-                double elapsed; 
-                gettimeofday(&tv1, &tz);
-
-
-                int x;
-                cin >> n >> x;
-                
-                
-                int maxx = -1;
-                
-                for(int i = 1;i <= n;++i)
-                {
-                    cin >> a[i];
-                    maxx = max(maxx,a[i]);
-                
-                }
-            
-                maxx = max(maxx,x);
-                dp.clear();
-                
-                dp.resize(n + 5,vector<vector<int>>(maxx + 2,vector<int>(maxx + 2,-1)));
-                
-                int res = go(1,0,x);
-                
-                if(res == maxs)
-                    res = -1;
-                
-                cout << res;
-                
-                
-                cout << '\n';
-
-                gettimeofday(&tv2, &tz);
-
-                
-                elapsed = (double) (tv2.tv_sec-tv1.tv_sec) + (double) (tv2.tv_usec-tv1.tv_usec) * 1.e-6;
-                printf("elapsed time = %f seconds.\n", elapsed);
+                if(prime[j]==1)
+                    prime[j]=0;
             }
         }
-             
+
+        //end=omp_get_wtime();
+        cout<<"Prime numbers are as follows\n";
+        for(i=1;i<=n;i++)
+            if(prime[i])
+                cout<<i<<" ";
+        //cout<<"---------------\n Time taken "<<end-start;
+
+        return 0;
+    }
+
+  
               
             `}
         </pre>
@@ -111,96 +72,50 @@ export default function Blurring() {
         <pre className="source-code">
             {`
               
-              #include <bits/stdc++.h>
-        #include <omp.h>
-        #include <sys/time.h>
+                    
+        #include <bits/stdc++.h>
+        #include<omp.h>
         using namespace std;
-        const int maxs = 503;
-        int n;
 
-        int a[maxs];
-        vector<vector<vector<int>>>dp;
-
-        int go(int pos,int prev,int x)
-        {
-            #pragma omp if
-            if(pos > n)
-                return 0;
-            
-            #pragma omp if
-            if(dp[pos][prev][x] != -1)
-                return dp[pos][prev][x];
-            
-            int res = maxs;
-            
-            #pragma omp if
-            if(a[pos] > x && x >= prev)
-            res = min(res,1 + go(pos + 1,x,a[pos]));
-            
-            #pragma omp if
-            if(a[pos] >= prev)
-                res = min(res,go(pos + 1,a[pos],x));
-            
-            return dp[pos][prev][x] = res;
-        }
 
         int main()
         {
-            ios_base::sync_with_stdio(false);
-            cin.tie(NULL);
-            cout.tie(NULL);
-            
-            int tt = 1;
-            cin >> tt;
-            
-            while(tt--)
+
+            int n,i,j;
+            int prime[1000];
+
+            cout<<"In order to find prime number from 1 - n enter value of n\n";
+            cin>>n;
+
+            for(i=1;i<=n;i++)
+                prime[i]=1;
+            prime[1]=0;
+
+            double start,end;
+            start=omp_get_wtime();
+
+            for(i=2;i*i<=n;i++)
             {
 
-                int x,i;
-                cin >> n >> x;
-                
-                
-                int maxx = -1;
-
-                
-
-                #pragma omp parallel{
-
-                struct timeval tv1, tv2;
-                struct timezone tz;
-                double elapsed; 
-                gettimeofday(&tv1, &tz);
-
-                #pragma omp for private(i)
-                for(i = 1;i <= n;++i)
+                #pragma omp parallel for
+                for(j=i*i;j<=n;j+=i)
                 {
-                    cin >> a[i];
-                    maxx = max(maxx,a[i]);
-                
+                    if(prime[j]==1)
+                        prime[j]=0;
                 }
-            
-                maxx = max(maxx,x);
-                dp.clear();
-                
-                dp.resize(n + 5,vector<vector<int>>(maxx + 2,vector<int>(maxx + 2,-1)));
-                
-                int res = go(1,0,x);
-                
-                if(res == maxs)
-                    res = -1;
-                
-                cout << res;
-                
-                
-                cout << '\n';
-
-                gettimeofday(&tv2, &tz);
-
-                
-                elapsed = (double) (tv2.tv_sec-tv1.tv_sec) + (double) (tv2.tv_usec-tv1.tv_usec) * 1.e-6;
-                printf("elapsed time = %f seconds.\n", elapsed);
             }
-            }
+
+            end=omp_get_wtime();
+            cout<<"Prime numbers are as follows\n";
+            for(i=1;i<=n;i++)
+                if(prime[i])
+                    cout<<i<<" ";
+            cout<<"---------------\n Time taken "<<end-start;
+
+            return 0;
+        }
+
+
               
             `}
         </pre>
